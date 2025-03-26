@@ -48,11 +48,12 @@ public class Campo_Minado {
 		}
 		
 		// JOGANDO
-		int doInicio = 0, tentativas = 0, pontos = 0;
+		int doInicio = 0, tentativas = 1, pontos = 0;
 		boolean ganhou = true;
 		do {
 			
 			System.out.println("----------------------------------");
+			System.out.printf("TENTATIVA %d°\n",tentativas);
 			// PEGANDO LINHA E COLUNA
 			int linha, coluna;
 			// Linha
@@ -113,13 +114,14 @@ public class Campo_Minado {
 				System.out.println("\n");
 			}
 			// FIM DO JOGO
-			pontos+=2;		
-		}while(tentativas < 5 && ganhou);
+			if(ganhou) pontos+=2;
+			else { /* não ganha ponto */}
+		}while(tentativas <= 5 && ganhou);
 		
 		System.out.println("----------------------------------");
 		System.out.println("FIM DE JOGO");
 		System.out.printf("TOTAL DE PONTOS: %d\n", pontos);
-		System.out.printf("TOTAL DE TENTATIVAS: %d\n", tentativas);
+		System.out.printf("TOTAL DE TENTATIVAS: %d\n", tentativas-1);
 		System.out.println("----------------------------------");
 	}
 }
