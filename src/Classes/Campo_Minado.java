@@ -86,11 +86,11 @@ public class Campo_Minado {
 			System.out.println("----------------------------------");
 			
 			// VERIFICANDO ESCOLHAS IGUAIS
-			
 			if(casas[linha][coluna] == 2) {
 				System.out.println("Você ja escolheu essa posição!");
 				continue;
 			}
+			
 			tentativas++;
 			// MODIFICANDO A LINHA E COLUNA INDICADA
 			for(int l = 0; l < casas.length; l++) {
@@ -98,7 +98,6 @@ public class Campo_Minado {
 					if(casas[linha][coluna] == 0) casas[linha][coluna] = 2;
 					else if(casas[linha][coluna] == 1) casas[linha][coluna] = 3;
 				}
-				
 			}
 			
 			// MOSTRANDO A LINHA MODIFICADA
@@ -113,6 +112,7 @@ public class Campo_Minado {
 				}
 				System.out.println("\n");
 			}
+			
 			// FIM DO JOGO
 			if(ganhou) pontos+=2;
 			else { /* não ganha ponto */}
